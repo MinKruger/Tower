@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     private Transform target;
     private float speed;
     private float destroyTimer = 2f;
+    public GameObject impactEffect;
 
     private Transform shootLocation;
 
@@ -40,7 +41,10 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
-        gameObject.GetComponent<Rigidbody>().AddForce(shootLocation.forward * speed, ForceMode.Impulse);
+
+        GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
+
+        Destroy(effectIns, 2f);
         
         Destroy(gameObject, destroyTimer);
     }

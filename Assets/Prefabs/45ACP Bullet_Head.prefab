@@ -12,6 +12,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: 45ACP Bullet_Head
       objectReference: {fileID: 0}
+    - target: {fileID: 5237249769643052626, guid: 9e0ef2cf9cfc11c46bbe7f28b272f6fb,
+        type: 3}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 623144131138111932, guid: 075d8b813ae30a84aaf4404f2a22fa69,
+        type: 3}
     - target: {fileID: 8535412081993147290, guid: 9e0ef2cf9cfc11c46bbe7f28b272f6fb,
         type: 3}
       propertyPath: m_LocalPosition.x
