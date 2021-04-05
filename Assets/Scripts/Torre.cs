@@ -21,11 +21,12 @@ namespace TorreProject
 
         [Header("Gun Prefab Refrences")]
         public GameObject bulletPrefab;
+        public Transform firePoint;
         public GameObject casingPrefab;
         public GameObject muzzleFlashPrefab;
 
         [Header("Gun Location Refrences")]
-        [SerializeField] private Animator gunAnimator;
+        //[SerializeField] private Animator gunAnimator;
         [SerializeField] private Transform barrelLocation;
         [SerializeField] private Transform casingExitLocation;
 
@@ -45,8 +46,8 @@ namespace TorreProject
             if (barrelLocation == null)
                 barrelLocation = transform;
 
-            if (gunAnimator == null)
-                gunAnimator = GetComponentInChildren<Animator>();
+            //if (gunAnimator == null)
+            //    gunAnimator = GetComponentInChildren<Animator>();
         }
 
         //Função para mirar nos inimigos
@@ -98,12 +99,12 @@ namespace TorreProject
 
             fireCountdown -= Time.deltaTime;
 
-            //If you want a different input, change it here
-            if (Input.GetButtonDown("Fire1"))
-            {
-                //Calls animation on the gun that has the relevant animation events that will fire
-                gunAnimator.SetTrigger("Fire");
-            }
+            ////If you want a different input, change it here
+            //if (Input.GetButtonDown("Fire1"))
+            //{
+            //    //Calls animation on the gun that has the relevant animation events that will fire
+            //    gunAnimator.SetTrigger("Fire");
+            //}
         }
 
         void OnDrawGizmosSelected()
@@ -136,7 +137,16 @@ namespace TorreProject
                 Bullet bullet = tempBullet.GetComponent<Bullet>();
                 if (bullet != null)
                     bullet.Seek(target, shotPower, barrelLocation);
-            }            
+            }
+            else
+            {
+                // Create a bullet and add force on it in direction of the barrel
+                GameObject tempBullet;
+                tempBullet = Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation);
+                Bullet bullet = tempBullet.GetComponent<Bullet>();
+                if (bullet != null)
+                    bullet.Seek(target, shotPower, barrelLocation);
+            }
         }
 
 

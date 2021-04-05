@@ -42,10 +42,10 @@ public class Bullet : MonoBehaviour
     void HitTarget()
     {
 
-        GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
+        gameObject.GetComponent<Rigidbody>().AddForce(shootLocation.forward * speed, ForceMode.Impulse);
 
-        Destroy(effectIns, 2f);
-        
+
+
         Destroy(gameObject, destroyTimer);
     }
 }
