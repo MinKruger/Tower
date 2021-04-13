@@ -6,8 +6,6 @@ public class Enemy : MonoBehaviour
 {
     public float speed = 10f;
 
-    public int health = 10;
-
     private Transform target;
     private int waypointIndex = 0;
 
@@ -15,21 +13,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         target = Waypoints.waypoints[0];    
-    }
-
-    public void TakeDamage (int amount)
-    {
-        health -= amount;
-
-        if(health <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        Destroy(gameObject);
     }
 
     // Update is called once per frame
