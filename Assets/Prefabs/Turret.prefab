@@ -209,16 +209,7 @@ MonoBehaviour:
   fireRate: 1
   bulletPrefab: {fileID: 1506502355083693648, guid: b44c4b8e55f30ab49ab57ac8ca769776,
     type: 3}
-  casingPrefab: {fileID: 4362657251999731927, guid: 4cb20e8abae957146a8b78e670d3fe74,
-    type: 3}
-  muzzleFlashPrefab: {fileID: 1782395880954752, guid: 3dd9cf2e209c504448f1c4c6835675cf,
-    type: 3}
-  gunAnimator: {fileID: 0}
-  barrelLocation: {fileID: 0}
-  casingExitLocation: {fileID: 0}
-  destroyTimer: 2
-  shotPower: 500
-  ejectPower: 150
+  firePoint: {fileID: 3027154680894625139}
 --- !u!1 &1134511334306892236
 GameObject:
   m_ObjectHideFlags: 0
