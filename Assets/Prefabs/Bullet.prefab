@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2629884049156678460}
   - component: {fileID: 3679981272761015364}
   - component: {fileID: 174732047086615660}
-  - component: {fileID: 114556440124999228}
   - component: {fileID: 54072347126343866}
+  - component: {fileID: 3859440159356125603}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -79,20 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &114556440124999228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506502355083693648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9922d95e989a7f941a4579830efbbc8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  impactEffect: {fileID: 623144131138111932, guid: 075d8b813ae30a84aaf4404f2a22fa69,
-    type: 3}
 --- !u!54 &54072347126343866
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -109,3 +95,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3859440159356125603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506502355083693648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9922d95e989a7f941a4579830efbbc8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25
+  explosionRadius: 0
+  impactEffect: {fileID: 0}
