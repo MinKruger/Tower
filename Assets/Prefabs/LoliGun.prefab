@@ -321,6 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6154507441965685224}
   - component: {fileID: 6154507441956075112}
+  - component: {fileID: 5994138914853219206}
   m_Layer: 0
   m_Name: LoliGun
   m_TagString: Untagged
@@ -364,6 +365,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5994138914853219206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154507441965581320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c98328db1fb79d4b819c723e728b617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partToRotate: {fileID: 6154507441965685224}
+  enemyTag: Enemy
+  range: 15
+  turnSpeed: 10
+  fireRate: 1
+  bulletPrefab: {fileID: 6759450043951352606, guid: 19d117c2ac0eca54eb0a07a093546ded,
+    type: 3}
+  firePoint: {fileID: 4027753007266923881}
+  casingPrefab: {fileID: 0}
+  muzzleFlashPrefab: {fileID: 0}
+  barrelLocation: {fileID: 4027753007266923881}
+  casingExitLocation: {fileID: 0}
+  destroyTimer: 2
+  shotPower: 500
+  ejectPower: 150
 --- !u!1 &6154507441965581322
 GameObject:
   m_ObjectHideFlags: 0
