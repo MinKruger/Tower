@@ -6,7 +6,8 @@ public class Torre : MonoBehaviour
 {
     private Transform target;
     public Transform partToRotate;
-
+    private AudioSource TowerAudio;
+    public AudioClip shotSound;
     public string enemyTag = "Enemy";
 
     [Header("Unity-chan Attributes")]
@@ -39,6 +40,7 @@ public class Torre : MonoBehaviour
     void Start()
     {
         //faz a torre seguir os inimigos imediatamente com um intervalo de 1.0 segundo
+        
         InvokeRepeating("UpdateTarget", 0f, 1f);
 
         if (barrelLocation == null)
@@ -46,6 +48,8 @@ public class Torre : MonoBehaviour
 
         //if (gunAnimator == null)
         //    gunAnimator = GetComponentInChildren<Animator>();
+
+        TowerAudio = GetComponent<AudioSource>();
     }
 
     //Função para mirar nos inimigos
@@ -135,6 +139,9 @@ public class Torre : MonoBehaviour
             Bullet bullet = tempBullet.GetComponent<Bullet>();
             if (bullet != null)
                 bullet.Seek(target, shotPower, barrelLocation);
+            
+            //Play SFX
+            TowerAudio.PlayOneShot(shotSound, 0.2f);
         }
         else
         {
@@ -144,6 +151,9 @@ public class Torre : MonoBehaviour
             Bullet bullet = tempBullet.GetComponent<Bullet>();
             if (bullet != null)
                 bullet.Seek(target, shotPower, barrelLocation);
+
+            //Play SFX
+            TowerAudio.PlayOneShot(shotSound, 0.2f);
         }
     }
 

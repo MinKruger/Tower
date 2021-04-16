@@ -8,13 +8,18 @@ public class Enemy : MonoBehaviour
 
     public int health = 100;
 
+    private AudioSource EnemyAudio;
+    public AudioClip HitSound;
+    public AudioClip DieSound;
+
     private Transform target;
     private int waypointIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        target = Waypoints.waypoints[0];    
+        target = Waypoints.waypoints[0];  
+        EnemyAudio = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int amount)
@@ -23,7 +28,12 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            EnemyAudio.PlayOneShot(DieSound, 0.5f);
             Die();
+        }
+        else
+        {
+            EnemyAudio.PlayOneShot(HitSound, 0.5f);
         }
     }
 

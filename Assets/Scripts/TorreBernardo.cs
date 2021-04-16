@@ -6,7 +6,8 @@ public class TorreBernardo : MonoBehaviour
 {
     private Transform target;
     public Transform partToRotate;
-
+    private AudioSource TowerAudio;
+    public AudioClip shotSound;
     public string enemyTag = "Enemy";
 
     [Header("Attributes")]
@@ -23,6 +24,7 @@ public class TorreBernardo : MonoBehaviour
     {
         //faz a torre seguir os inimigos imediatamente com um intervalo de 1.0 segundo
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        TowerAudio = GetComponent<AudioSource>();
     }
 
     //Função para mirar nos inimigos
@@ -89,5 +91,6 @@ public class TorreBernardo : MonoBehaviour
                 Bullet bullet = tempBullet.GetComponent<Bullet>();
                 if (bullet != null)
                     bullet.Seek(target, 50f, firePoint);
+        TowerAudio.PlayOneShot(shotSound, 0.2f);
     }
 }
