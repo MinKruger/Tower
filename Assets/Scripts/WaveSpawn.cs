@@ -15,27 +15,32 @@ public class WaveSpawn : MonoBehaviour
     private bool canSpawn = true;
 	private float countdown = 2f;
 
-	// void Start ()
-    // {
-	// 	InvokeRepeating("SpawnEnemy", startTime, EnemyInterval);
-	// }
+    private AudioSource GameAudio;
+    public AudioClip WinSound;
+
+	void Start ()
+    {
+		GameAudio = GetComponent<AudioSource>();
+	}
 
 	void Update()
     {
-        if (countdown <= 0)
-        {
-            StartCoroutine(SpawnWave());
-            countdown = waveIndex * 0.7f;
-        }
+        if(canSpawn) {
+            if (countdown <= 0)
+            {
+                StartCoroutine(SpawnWave());
+                countdown = waveIndex * 0.7f;
+            }
 
-        countdown -= Time.deltaTime;
+            countdown -= Time.deltaTime;
+        }
     }
 
 	IEnumerator SpawnWave()
     {   
         waveIndex++;
 
-        if(canSpawn && waveIndex <= 100 ){
+        if(canSpawn && waveIndex <= 10 ){
             for (int i = 0; i < waveIndex; i++)
             {
                 SpawnEnemy();
@@ -45,6 +50,8 @@ public class WaveSpawn : MonoBehaviour
         {
             canSpawn = false;
 
+            yield return new WaitForSeconds(10);
+            GameAudio.PlayOneShot(WinSound, 1f);
         }
     }
 
