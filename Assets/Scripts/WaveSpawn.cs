@@ -40,7 +40,7 @@ public class WaveSpawn : MonoBehaviour
     {   
         waveIndex++;
 
-        if(canSpawn && waveIndex <= 10 ){
+        if(canSpawn && waveIndex <= 7 ){
             for (int i = 0; i < waveIndex; i++)
             {
                 SpawnEnemy();

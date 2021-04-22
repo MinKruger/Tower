@@ -743,7 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   startHealth: 100
-  HitSound: {fileID: 8300000, guid: 1986637303181bf4d9f73f32782d785e, type: 3}
+  HitSound: {fileID: 8300000, guid: 24b75478116b661499137d149fc29f86, type: 3}
   DieSound: {fileID: 8300000, guid: fb2a6bc9e1e46db449c9e7fc168c9371, type: 3}
   healthBar: {fileID: 2078913704}
 --- !u!135 &135975656248482850
@@ -771,7 +771,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.267
   m_Pitch: 1
   Loop: 0
   Mute: 0
